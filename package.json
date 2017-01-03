@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/tabalinas/time-logger/issues"
   },
-  "homepage": "https://github.com/tabalinas/time-logger#readme"
+  "homepage": "https://github.com/tabalinas/time-logger#readme",
+  "dependencies": {
+    "babel-standalone": "^6.21.1-0",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1"
+  }
 }
