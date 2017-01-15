@@ -57,26 +57,60 @@ const EditableTimer = React.createClass({
 
 const TimerForm = React.createClass({
     render: function() {
+        const submitText = this.props.title ? "Update" : "Create";
+
         return (
-            <div>Timer Form</div>
+            <div className="timer-form">
+                <div className="timer-form-field">
+                    <label>Title</label>
+                    <input type="text" defaultValue={this.props.title} />
+                </div>
+                <div className="timer-form-field">
+                    <label>Project</label>
+                    <input type="text" defaultValue={this.props.project} />
+                </div>
+                <div className="timer-form-buttons">
+                    <button>{submitText}</button>
+                    <button>Cancel</button>
+                </div>
+            </div>
         )
     }
 });
 
 const Timer = React.createClass({
     render: function() {
+        const elapsedString = helpers.millisecondsToHuman(this.props.elapsed);
+
         return (
-            <div>Timer</div>
+            <div class="timer-info">
+                <div>{this.props.title}</div>
+                <div>{this.props.project}</div>
+                <div>{elapsedString}</div>
+                <button>Edit</button>
+                <button>Delete</button>
+            </div>
         )
     }
 });
 
 const TogglableTimerForm = React.createClass({
     render: function() {
-        return (
-            <div>Togglable Timer Form</div>
-        )
+        if(this.isOpen) {
+            return (
+                <TimerForm />
+            )
+        } else {
+            return (
+                <div className="timer-form">
+                    <div className="timer-form-buttons">
+                        <button>Add</button>
+                    </div>
+                </div>
+            )
+        }
     }
 });
+
 
 ReactDOM.render(<TimersDashboard />, document.getElementById("content"));
