@@ -1,7 +1,7 @@
 const TimersDashboard = React.createClass({
    render: function() {
        return (
-           <div className="timer-dashboard">
+           <div className='timer-dashboard'>
                <EditableTimerList />
                <TogglableTimerForm isOpen={true} />
            </div>
@@ -12,18 +12,18 @@ const TimersDashboard = React.createClass({
 const EditableTimerList = React.createClass({
     render: function() {
         return (
-            <div className="timer-list">
+            <div className='timer-list'>
                 <EditableTimer
-                    title="Timer1"
-                    project="Project1"
-                    elapsed="8986300"
+                    title='Timer1'
+                    project='Project1'
+                    elapsed='8986300'
                     runningSince={null}
                     editFormOpen={false}
                 />
                 <EditableTimer
-                    title="Timer2"
-                    project="Project1"
-                    elapsed="8986500"
+                    title='Timer2'
+                    project='Project1'
+                    elapsed='8986500'
                     runningSince={null}
                     editFormOpen={true}
                 />
@@ -57,19 +57,19 @@ const EditableTimer = React.createClass({
 
 const TimerForm = React.createClass({
     render: function() {
-        const submitText = this.props.title ? "Update" : "Create";
+        const submitText = this.props.title ? 'Update' : 'Create';
 
         return (
-            <div className="timer-form">
-                <div className="timer-form-field">
+            <div className='timer-form'>
+                <div className='timer-form-field'>
                     <label>Title</label>
-                    <input type="text" defaultValue={this.props.title} />
+                    <input type='text' defaultValue={this.props.title} />
                 </div>
-                <div className="timer-form-field">
+                <div className='timer-form-field'>
                     <label>Project</label>
-                    <input type="text" defaultValue={this.props.project} />
+                    <input type='text' defaultValue={this.props.project} />
                 </div>
-                <div className="timer-form-buttons">
+                <div className='timer-form-buttons'>
                     <button>{submitText}</button>
                     <button>Cancel</button>
                 </div>
@@ -83,7 +83,7 @@ const Timer = React.createClass({
         const elapsedString = helpers.millisecondsToHuman(this.props.elapsed);
 
         return (
-            <div class="timer-info">
+            <div class='timer-info'>
                 <div>{this.props.title}</div>
                 <div>{this.props.project}</div>
                 <div>{elapsedString}</div>
@@ -102,8 +102,8 @@ const TogglableTimerForm = React.createClass({
             )
         } else {
             return (
-                <div className="timer-form">
-                    <div className="timer-form-buttons">
+                <div className='timer-form'>
+                    <div className='timer-form-buttons'>
                         <button>Add</button>
                     </div>
                 </div>
@@ -113,4 +113,4 @@ const TogglableTimerForm = React.createClass({
 });
 
 
-ReactDOM.render(<TimersDashboard />, document.getElementById("content"));
+ReactDOM.render(<TimersDashboard />, document.getElementById('content'));
